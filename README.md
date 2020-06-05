@@ -1,8 +1,12 @@
 # ImageMagick for AWS Lambda
 
+## Disclamer
+
+This is only a fork of the original ImageMagick layer by Gojko Adzic <https://gojko.net> adding freetype support.
+
 Scripts to compile ImageMagick utilities for AWS Lambda instances powered by Amazon Linux 2.x, such as the `nodejs10.x` or `nodejs12.x` or `python 3.8` runtime, and the updated 2018.03 Amazon Linux 1 runtimes. 
 
-Amazon Linux 2 instances for Lambda no longer contain system utilities, so `convert`, `mogrify` and `identify` from the [ImageMagick](https://imagemagick.org) package are no longer available. 
+Amazon Linux 2 instances for Lambda no longer contain system utilities, so `convert`, `mogrify` and `identify` from the [ImageMagick](https://imagemagick.org) package are no longer available.
 
 ## Usage
 
@@ -60,7 +64,7 @@ These libraries are currently bundled:
 
 Run the following command to deploy the compiled result as a layer in your AWS account.
 
-```
+```bash
 make deploy DEPLOYMENT_BUCKET=<YOUR BUCKET NAME>
 ```
 
@@ -73,11 +77,9 @@ calling `make deploy` to use an alternative name.
 
 An example project is in the [example](example) directory. It sets up two buckets, and listens to file uploads on the first bucket to convert and generate thumbnails, saving to the second bucket. You can deploy it from the root Makefile using:
 
-```
+```bash
 make deploy-example DEPLOYMENT_BUCKET=<YOUR BUCKET NAME>
 ```
-
-
 
 ## Info on scripts
 
@@ -87,6 +89,10 @@ For more information, check out:
 * http://www.linuxfromscratch.org/blfs/view/cvs/general/imagemagick.html
 
 ## Author
+
+Sergio Matone ([@sw360cab](https://twitter.com/sw360cab)) (forked by Gojko Adzic)
+
+## Original Author
 
 Gojko Adzic <https://gojko.net>
 

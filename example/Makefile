@@ -1,5 +1,5 @@
-STACK_NAME ?= imagemagick-layer-example
-IMAGE_MAGICK_STACK_NAME ?= imagemagick-layer
+STACK_NAME ?= imagemagick-freetype-layer-example
+IMAGE_MAGICK_STACK_NAME ?= imagemagick-freetype-layer
 
 IMAGEMAGICK_LAYER ?=$(shell aws cloudformation describe-stacks --stack-name $(IMAGE_MAGICK_STACK_NAME) --query Stacks[].Outputs[].OutputValue --output text)
 SOURCES=$(shell find src/)

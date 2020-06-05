@@ -6,14 +6,16 @@ Description: >
   and support for jpeg, gif, png, tiff and webm formats
   and freetype font engine.
 
-  Check out https://github.com/serverlesspub/imagemagick-aws-lambda-2
+  Note this is a fork of the original ImageMagick layer,
+  adding freetype support.
+  Check out https://github.com/serverless/imagemagick-aws-lambda-2
   for more information.
 Resources:
   ImageMagickLayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
-      LayerName: image-magick
-      Description: Static build of ImageMagick for AWS Linux 2,
+      LayerName: image-magick-freetype
+      Description: Static build of ImageMagick for AWS Linux 2 with freetype support,
       ContentUri: build/layer.zip
       CompatibleRuntimes:
         - nodejs10.x
@@ -29,7 +31,7 @@ Outputs:
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: image-magick-lambda-layer
+    Name: image-magick-freetype-lambda-layer
     Description: >
       Static build of ImageMagick for Amazon Linux 2,
       packaged as a Lambda layer. Bundles ImageMagick 7.0.8-45.
@@ -37,11 +39,11 @@ Metadata:
       Including convert, mogrify and identify tools
       and support for jpeg, gif, png, tiff and webm formats
       and freetype font engine.
-    Author: Gojko Adzic
-    SpdxLicenseId: ImageMagick
+    Author: Sergio Matone
+    SpdxLicenseId: ImageMagickFreetype
     LicenseUrl: LICENSE.txt
     ReadmeUrl: README-SAR.md 
-    Labels: ['layer', 'image', 'lambda', 'imagemagick']
-    HomePageUrl: https://github.com/serverlesspub/imagemagick-aws-lambda-2
+    Labels: ['layer', 'image', 'lambda', 'imagemagick', 'freetype']
+    HomePageUrl: https://github.com/sw360cab/imagemagick-aws-lambda-2
     SemanticVersion: 1.0.0
-    SourceCodeUrl: https://github.com/serverlesspub/imagemagick-aws-lambda-2
+    SourceCodeUrl: https://github.com/sw360cab/imagemagick-aws-lambda-2
