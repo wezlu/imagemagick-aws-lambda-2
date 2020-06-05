@@ -2,7 +2,7 @@
 
 Fork of the original of the original ImageMagick layer adding Freetype engine support.
 Static build of ImageMagick for Amazon Linux 2, packaged as a Lambda layer.
-Bundles ImageMagick 7.0.8-45, including convert, mogrify and identify tools
+Bundles ImageMagick 7.0.10-16, including convert, mogrify and identify tools
 and support for jpeg, gif, png, tiff and webm formats and freetype font engine.
 
 This application provides a single output, `LayerVersion`, which points to a
